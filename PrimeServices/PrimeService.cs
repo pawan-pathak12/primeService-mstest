@@ -1,9 +1,17 @@
-﻿
-public class PrimeService
+﻿public class PrimeService
 {
-    public bool IsPrime(int candidate)
+    public bool IsPrime(int number)
     {
-        throw new NotImplementedException("Write tests first!");
+        if (number <= 1) return false;
+
+        for (int i = 2; i <= Math.Sqrt(number); i++)
+        {
+            if (number % i == 0) return false;
+        }
+
+        return true;
     }
+
+
 }
 
