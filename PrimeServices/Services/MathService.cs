@@ -31,5 +31,45 @@
             return n * n;
         }
 
+        public int Reverse(int input)
+        {
+            int num = input;
+            int reminder, reverse = 0;
+
+            while (num != 0)
+            {
+                reminder = num % 10;
+                reverse = reverse * 10 + reminder;
+                num /= 10;
+            }
+            return reverse;
+        }
+        public string ReverseString(string input)
+        {
+            string result = "";
+
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                result += input[i];
+            }
+
+            return result;
+
+        }
+
+        public bool IsPalindrome(string input)
+        {
+            string reverse = "";
+            string data = input;
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                reverse += input[i];
+            }
+            if (reverse != data)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
